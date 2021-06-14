@@ -1,5 +1,5 @@
-resource "google_container_cluster" "guestbook" {
-  name               = "guestbook"
+resource "google_container_cluster" "guestbook-cluster" {
+  name               = "guestbook-cluster"
   location           = "northamerica-northeast1"
   initial_node_count = 1
   project         = var.project
@@ -65,21 +65,21 @@ resource "google_container_cluster" "guestbook" {
 }
 
 output "client_certificate" {
-  value     = google_container_cluster.guestbook.master_auth.0.client_certificate
+  value     = google_container_cluster.guestbook-cluster.master_auth.0.client_certificate
   sensitive = true
 }
 
 output "client_key" {
-  value     = google_container_cluster.guestbook.master_auth.0.client_key
+  value     = google_container_cluster.guestbook-cluster.master_auth.0.client_key
   sensitive = true
 }
 
 output "cluster_ca_certificate" {
-  value     = google_container_cluster.guestbook.master_auth.0.cluster_ca_certificate
+  value     = google_container_cluster.guestbook-cluster.master_auth.0.cluster_ca_certificate
   sensitive = true
 }
 
 output "host" {
-  value     = google_container_cluster.guestbook.endpoint
+  value     = google_container_cluster.guestbook-cluster.endpoint
   sensitive = true
 }

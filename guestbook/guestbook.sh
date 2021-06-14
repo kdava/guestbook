@@ -6,7 +6,7 @@ cd ..
 
 #Connecting to the created cluster
 echo "Connecting to cluster"
-gcloud container clusters get-credentials guestbook --region northamerica-northeast1 --project idyllic-pottery-316421
+gcloud container clusters get-credentials guestbook-cluster --region northamerica-northeast1 --project idyllic-pottery-316421
 
 # Istio Installlation steps
 echo "Installing istio"
